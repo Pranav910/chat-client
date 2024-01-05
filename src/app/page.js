@@ -37,7 +37,7 @@ export default function Home() {
     async function connect()
     {
       setLoader(true)
-      const res = await fetch('https://chat-backend-taupe-ten.vercel.app/',{
+      const res = await fetch('https://chat-backend-qfr2.onrender.com/',{
         method : 'get',
         headers : {
           'Content-Type' : 'application/json',
