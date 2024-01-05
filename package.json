@@ -1,0 +1,24 @@
+{
+  "name": "exp-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "filepix": "^1.0.9",
+    "jspdf": "^2.5.1",
+    "next": "14.0.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-scroll-to-bottom": "^4.2.0",
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.2"
+  }
+}
