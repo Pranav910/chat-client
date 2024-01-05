@@ -20,7 +20,7 @@ export default function Home() {
   {
     socket.emit('sentmsg', {id : socket.id, message})
     
-    // setMessage('')
+    setMessage('')
   }
 
   async function joinRoom()
@@ -31,6 +31,7 @@ export default function Home() {
 
 
   useEffect(() => {
+    
     socket = socketio('https://chat-backend-qfr2.onrender.com/')
 
     socket.on('connect', () => {
