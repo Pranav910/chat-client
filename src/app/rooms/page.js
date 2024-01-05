@@ -22,7 +22,7 @@ export default function Page() {
   }
 
   useEffect(() => {
-    socket = socketio('http://localhost:8080/', { transports: ['websocket'] })
+    socket = socketio('https://chat-backend-qfr2.onrender.com//', { transports: ['websocket'] })
 
     socket.on('connect', () => {
       console.log(`${socket.id} joined`)
