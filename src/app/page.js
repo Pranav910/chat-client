@@ -4,9 +4,8 @@ import styles from './page.module.css'
 import { useEffect, useState } from 'react'
 import socketio from 'socket.io-client'
 import { useRouter } from 'next/navigation';
-import { IoIosSend } from "react-icons/io";
-import { CgProfile } from "react-icons/cg";
-import ScrollToBottom from 'react-scroll-to-bottom';
+import { AiOutlineSend } from "react-icons/ai";
+import { FaRegUserCircle } from "react-icons/fa";
 
 export let socket;
 
@@ -59,13 +58,13 @@ export default function Home() {
         <div className={styles.renderedmsg}> 
         {
           recievegMsg.map((val, index) => {
-            return (<div className={styles.messages} key={index} style={{textAlign : `${val.pos}`, flexDirection : `${val.flexDirection}`}}><CgProfile size={'25px'} className={styles.profile}/><p style={{display : 'inline', margin : '5px 5px'}}>{val.message}</p></div>)
+            return (<div className={styles.messages} key={index} style={{textAlign : `${val.pos}`, flexDirection : `${val.flexDirection}`}}><FaRegUserCircle size={'25px'} className={styles.profile}/><p style={{display : 'inline', margin : '5px 5px'}}>{val.message}</p></div>)
           })
         }
         </div>
       <div className={styles.sendmsg} >
           <input type='text' placeholder='message' value={message} onChange={(e) => setMessage(e.target.value)}/>
-          <button onClick={sendMsg}><IoIosSend size={'20px'}/></button>
+          <button onClick={sendMsg}><AiOutlineSend size={'20px'}/></button>
           </div>
       </div>
           {/* <button style={{position : 'absolute', bottom : '0'}} onClick={joinRoom}>Join Room</button> */}
