@@ -54,7 +54,7 @@ export default function Home() {
 
     connect()
 
-    socket = socketio('https://chat-backend-qfr2.onrender.com/')
+    socket = socketio('https://chat-backend-taupe-ten.vercel.app/')
 
     socket.on('connect', () => {
       console.log(`${socket.id} joined`)
