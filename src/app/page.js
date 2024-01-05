@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import { useEffect, useState } from 'react'
 import socketio from 'socket.io-client'
 import { useRouter } from 'next/navigation';
-import { AiOutlineSend } from "react-icons/ai";
+import { IoMdSend } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 
 export let socket;
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       <div className={styles.sendmsg} >
           <input type='text' placeholder='message' value={message} onChange={(e) => setMessage(e.target.value)}/>
-          <button onClick={sendMsg}><AiOutlineSend size={'20px'}/></button>
+          <button onClick={sendMsg}><IoMdSend size={'20px'}/></button>
           </div>
       </div>
           {/* <button style={{position : 'absolute', bottom : '0'}} onClick={joinRoom}>Join Room</button> */}
