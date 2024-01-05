@@ -6,7 +6,7 @@ import socketio from 'socket.io-client'
 
 let socket;
 
-export default function page() {
+export default function Page() {
 
   const [message, setMessage] = useState('')
   const [recievegMsg, setRecievedMsg] = useState([{
