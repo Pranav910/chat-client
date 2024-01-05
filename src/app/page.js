@@ -6,6 +6,7 @@ import socketio from 'socket.io-client'
 import { useRouter } from 'next/navigation';
 import { IoMdSend } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
+import Loader from '../components/Loader';
 
 export let socket;
 
@@ -13,6 +14,7 @@ export default function Home() {
 
   const router = useRouter()
 
+  const [loader, setLoader] = useState(false)
   const [message, setMessage] = useState('')
   const [recievegMsg, setRecievedMsg] = useState([])
 
@@ -31,7 +33,27 @@ export default function Home() {
 
 
   useEffect(() => {
-    
+
+    async function connect()
+    {
+      setLoader(true)
+      const res = await fetch('https://chat-backend-qfr2.onrender.com/',{
+        method : 'get',
+        headers : {
+          'Content-Type' : 'application/json',
+          Accept : 'application/json'
+        }
+
+      })
+      
+      const resdata = await res.json()
+      console.log(resdata)
+
+      if(res.status === 200) setLoader(false)
+    }
+
+    connect()
+
     socket = socketio('https://chat-backend-qfr2.onrender.com/')
 
     socket.on('connect', () => {
@@ -55,6 +77,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      {loader && <Loader />}
       <div className={styles.messagediv}>
         <div className={styles.renderedmsg}> 
         {
