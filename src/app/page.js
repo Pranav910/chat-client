@@ -31,7 +31,7 @@ export default function Home() {
 
 
   useEffect(() => {
-    socket = socketio('http://localhost:8080/', { transports: ['websocket'] })
+    socket = socketio('https://chat-backend-qfr2.onrender.com/')
 
     socket.on('connect', () => {
       console.log(`${socket.id} joined`)
