@@ -71,6 +71,7 @@ export default function Home() {
 
     socket.on('recievedmsg', ({id, message}) => {
       setRecievedMsg(prev => [...prev, {message, pos : socket.id === id ? 'right' : 'left', flexDirection : socket.id === id ? 'row-reverse' : 'row'}])
+      console.log(id, message)
     })
 
   }, [])
