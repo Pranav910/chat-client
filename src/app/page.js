@@ -37,7 +37,7 @@ export default function Home() {
     async function connect()
     {
       setLoader(true)
-      const res = await fetch('https://chat-backend-taupe-ten.vercel.app/',{
+      const res = await fetch('https://spiny-dorian-keyboard.glitch.me',{
         method : 'get',
         headers : {
           'Content-Type' : 'application/json',
@@ -54,7 +54,7 @@ export default function Home() {
 
     connect()
 
-    socket = socketio('https://chat-backend-taupe-ten.vercel.app/')
+    socket = socketio('https://spiny-dorian-keyboard.glitch.me')
 
     socket.on('connect', () => {
       console.log(`${socket.id} joined`)

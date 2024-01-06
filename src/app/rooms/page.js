@@ -22,7 +22,7 @@ export default function Page() {
   }
 
   useEffect(() => {
-    socket = socketio('https://chat-backend-qfr2.onrender.com/')
+    socket = socketio('https://spiny-dorian-keyboard.glitch.me')
 
     socket.on('connect', () => {
       console.log(`${socket.id} joined`)
