@@ -76,6 +76,8 @@ export default function Home() {
 
   }, [])
 
+  console.log(recievegMsg)
+
   return (
     <main className={styles.main}>
       {loader && <Loader />}
